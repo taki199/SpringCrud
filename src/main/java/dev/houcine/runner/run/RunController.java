@@ -27,7 +27,7 @@ public class RunController {
     Run findById(@PathVariable Integer id) {  // @PathVariable to bind id from the URL
     Optional<Run> run=runRepository.findById(id);
     if(run.isEmpty()){
-      throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+      throw new RunNotFoundException();
     }
     return run.get();
 
