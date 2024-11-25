@@ -1,5 +1,6 @@
 package dev.houcine.runner.run;
 
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.web.bind.annotation.*;
@@ -35,13 +36,13 @@ public class RunController {
   //Post
   @ResponseStatus(HttpStatus.CREATED)
   @PostMapping("")
-  void  create (@RequestBody  Run run){
+  void  create (@Valid @RequestBody  Run run){
     runRepository.create(run);
   }
   //put
 @ResponseStatus(HttpStatus.NO_CONTENT)
   @PutMapping("/{id}")
-  void UpdateRun (@RequestBody Run run,@PathVariable Integer id ){
+  void UpdateRun (@Valid @RequestBody Run run,@PathVariable Integer id ){
     runRepository.update(run,id);
 
   }
