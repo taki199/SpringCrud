@@ -19,7 +19,7 @@ public class RunController {
     this.runRepository = runRepository;
   }
 
-  @GetMapping("")
+ /* @GetMapping("")
   public List<Run> findAll() {
     return runRepository.findAll();
   }
@@ -51,6 +51,6 @@ public class RunController {
   @DeleteMapping("/{id}")
   void delete(@PathVariable Integer id) {
     runRepository.delete(id);
-  }
+  } */
 
 }
